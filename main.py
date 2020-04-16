@@ -82,8 +82,8 @@ class Main:
         return json.loads(response.text)
 
     def send_mail(self, body):
-        sender = 'yassine.0.baghdadi@gmail.com'
-        password = 'y@$$inE@@'
+        sender = 'your.email@gmail.com'
+        password = 'password'
         with open('mail.txt', 'r') as f:
             sendTo = [i.replace('\n', '') for i in f.readlines()]
 
