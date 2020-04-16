@@ -81,9 +81,8 @@ class Main:
 
         return json.loads(response.text)
 
-    def send_mail(self, body):
-        sender = 'your.email@gmail.com'
-        password = 'password'
+    def send_mail(self, yag, body):
+
         with open('mail.txt', 'r') as f:
             sendTo = [i.replace('\n', '') for i in f.readlines()]
 
@@ -108,7 +107,7 @@ class Main:
         #         except Exception as e:
         #             print(' not sent to ', i)
 
-        yag = yagmail.SMTP(sender, password)
+
         for mailAdd in sendTo:
             yag.send(mailAdd, sub, body)
             print(f'sending to : {mailAdd} .. DONE ')
@@ -129,7 +128,10 @@ if __name__ == '__main__':
 
     #{'total_cases': '2,073,555', 'total_deaths': '134,020', 'total_recovered': '509,041', 'new_cases': '75,695', 'new_deaths': '7,420', 'statistic_taken_at': '2020-04-15 21:51:09'}
 
-
+    sender = 'your.email@gmail.com'
+    password = 'password'
+    yag = yagmail.SMTP(sender, password)
+    
     while True:
         ########### for Morocco ############à
         nM_cases = ''
