@@ -128,10 +128,10 @@ if __name__ == '__main__':
 
     #{'total_cases': '2,073,555', 'total_deaths': '134,020', 'total_recovered': '509,041', 'new_cases': '75,695', 'new_deaths': '7,420', 'statistic_taken_at': '2020-04-15 21:51:09'}
 
-    sender = 'your.email@gmail.com'
-    password = 'password'
+    sender = 'yassine.0.baghdadi@gmail.com'
+    password = 'Y@$$inE@B@GHD@DI'
     yag = yagmail.SMTP(sender, password)
-    
+
     while True:
         ########### for Morocco ############à
         nM_cases = ''
@@ -172,7 +172,7 @@ if __name__ == '__main__':
                     <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BLS73NBQEJ89N&amp;source=url">Donation</a></li>
                 </ul>
             """
-            m.send_mail(msg)
+            m.send_mail(yag, msg)
 
         ############ for whole world ################
         if str(time.strftime("%H:%M", time.gmtime())) == '22:00':
@@ -213,7 +213,7 @@ if __name__ == '__main__':
 
                     """
 
-            m.send_mail(msg)
+            m.send_mail(yag, msg)
 
 
 
